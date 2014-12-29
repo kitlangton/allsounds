@@ -1,0 +1,4 @@
+.col-sm-12
+  .show-date= show.starts_at.strftime("at %I:")
+  - show.bands.each do |band|
+    .show-band= band.name

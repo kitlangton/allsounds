@@ -1,0 +1,21 @@
+h1 New Show
+
+= bootstrap_form_for @show do |f|
+  = f.datetime_select :starts_at, ampm: true, minute_step: 15, default: 24.hours.from_now
+  hr
+  = f.label :bands
+  br
+  #bands-section
+    .band-form
+      = text_field_tag 'bands[]', nil, id: 'bands-1', class: 'typeahead'
+    .band-form
+      = text_field_tag 'bands[]', nil, id: 'bands-2', class: 'typeahead'
+    .band-form
+      = text_field_tag 'bands[]', nil, id: 'bands-3', class: 'typeahead'
+  #hidden-band-form
+    .band-form
+      = text_field_tag 'bands[]', nil, id: 'bands-4', class: 'added'
+  = button_tag "Add Band", class: 'btn btn-primary', id: 'add-band-form', type: "button"
+  = f.submit
+
+  = content_tag "div", id: "data", data: {names: @band_names} do
