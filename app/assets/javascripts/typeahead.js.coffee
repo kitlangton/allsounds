@@ -29,4 +29,4 @@ $ ->
   ,
     name: "bands"
     displayKey: "value"
-    source: substringMatcher(bands)
+    source: window.substringMatcher(window.bands)

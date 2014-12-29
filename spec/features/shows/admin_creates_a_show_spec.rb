@@ -12,9 +12,7 @@ feature 'Create shows' do
     fill_in "bands-1", with: "Greeterz"
     fill_in "bands-2", with: "Gump"
     click_button "Create Show"
-    expect(page).to have_content date.strftime("at %I:")
+    expect(page).to have_content date.strftime("at %l:")
     expect(page).to have_content "Greeterz"
   end
-
-  scenario "admin can create a new show"
 end

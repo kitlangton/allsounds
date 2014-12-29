@@ -21,6 +21,7 @@ gem 'unicorn-rails'
 gem 'upmin-admin'
 gem 'bootstrap_form'
 gem 'twitter-typeahead-rails'
+gem 'jquery-turbolinks'
 
 group :development do
   gem 'better_errors'

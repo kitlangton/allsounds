@@ -7,7 +7,11 @@ nav.navbar.navbar-inverse.navbar-fixed-top
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
+      = link_to 'All Shows', root_path, class: 'navbar-brand'
+      ul.nav.navbar-nav
+        - if user_signed_in? && current_user.admin?
+          li
+            = link_to 'New Show', new_show_path
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         == render 'layouts/navigation_links'

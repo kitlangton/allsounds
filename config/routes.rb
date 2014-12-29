@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'shows/new'
 
   mount Upmin::Engine => '/admin'
-  root to: 'visitors#index'
+  root to: 'shows#index'
   devise_for :users
   resources :shows
 end

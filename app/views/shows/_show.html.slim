@@ -1,4 +1,5 @@
 .col-sm-12
-  .show-date= show.starts_at.strftime("at %I:")
-  - show.bands.each do |band|
-    .show-band= band.name
+  .show-card
+    h4.date= show.starts_at.strftime("%b %e at %l:%M %p")
+    - show.bands.each do |band|
+      h5.band= band.name

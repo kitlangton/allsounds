@@ -16,6 +16,7 @@ h1 New Show
     .band-form
       = text_field_tag 'bands[]', nil, id: 'bands-4', class: 'added'
   = button_tag "Add Band", class: 'btn btn-primary', id: 'add-band-form', type: "button"
+  br
   = f.submit
 
   = content_tag "div", id: "data", data: {names: @band_names} do
