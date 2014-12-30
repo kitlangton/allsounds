@@ -24,6 +24,8 @@ gem 'twitter-typeahead-rails'
 gem 'jquery-turbolinks'
 gem "paperclip", "~> 4.2"
 gem "rmagick"
+gem 'aws-sdk', '~> 1.5.7'
+gem 'fog'
 
 group :development do
   gem 'better_errors'
