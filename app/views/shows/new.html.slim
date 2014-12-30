@@ -1,8 +1,9 @@
 h1 New Show
 
-= bootstrap_form_for @show do |f|
+= bootstrap_form_for @show, html: { multipart: true } do |f|
   = f.datetime_select :starts_at, ampm: true, minute_step: 15, default: 24.hours.from_now
   hr
+  = f.file_field :poster
   = f.label :bands
   br
   #bands-section

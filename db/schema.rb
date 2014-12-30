@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141229203533) do
+ActiveRecord::Schema.define(version: 20141230181219) do
 
   create_table "bands", force: true do |t|
     t.string   "name"
@@ -34,6 +34,10 @@ ActiveRecord::Schema.define(version: 20141229203533) do
     t.datetime "starts_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "poster_file_name"
+    t.string   "poster_content_type"
+    t.integer  "poster_file_size"
+    t.datetime "poster_updated_at"
   end
 
   add_index "shows", ["starts_at"], name: "index_shows_on_starts_at"

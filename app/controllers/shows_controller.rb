@@ -4,8 +4,10 @@ class ShowsController < ApplicationController
   end
 
   def create
-    @date = Show.new(show_params).starts_at
-    @show = ShowCreator.new(starts_at: @date, bands: params[:bands])
+    basic_show = Show.new(show_params)
+    @date = basic_show.starts_at
+    @poster = basic_show.poster
+    @show = ShowCreator.new(starts_at: @date, bands: params[:bands], poster: @poster)
     if @show.create
       redirect_to shows_url
     else
@@ -21,7 +23,7 @@ class ShowsController < ApplicationController
   private
 
   def show_params
-    params.require(:show).permit(:starts_at)
+    params.require(:show).permit(:starts_at,:poster)
   end
 
 end

@@ -22,6 +22,8 @@ gem 'upmin-admin'
 gem 'bootstrap_form'
 gem 'twitter-typeahead-rails'
 gem 'jquery-turbolinks'
+gem "paperclip", "~> 4.2"
+gem "rmagick"
 
 group :development do
   gem 'better_errors'
