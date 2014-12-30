@@ -26,6 +26,7 @@ gem "paperclip", "~> 4.2"
 gem "rmagick"
 gem 'aws-sdk', '~> 1.5.7'
 gem 'fog'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'better_errors'
