@@ -1,6 +1,10 @@
 .col-sm-12
   .show-card
-    h4.date= show.starts_at.strftime("%b %e at %l:%M %p")
     = image_tag show.poster.url(:medium)
+    h4.date
+      = link_to show.starts_at.strftime("%b %e"), show_path(show)
+      small
+        |  
+        = show.starts_at.strftime("at %l:%M %p")
     - show.bands.each do |band|
       h5.band= band.name

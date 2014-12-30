@@ -1,0 +1,11 @@
+.container
+  .col-sm-6
+    = image_tag @show.poster.url
+  .col-sm-6
+    h1
+      = @show.starts_at.strftime("%b %e")
+      small
+        |  
+        = @show.starts_at.strftime("at %l:%M %p")
+    - @show.bands.each do |band|
+      h4= band.name

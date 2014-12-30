@@ -20,6 +20,10 @@ class ShowsController < ApplicationController
     @band_names = Band.pluck(:name)
   end
 
+  def show
+    @show = Show.find(params[:id])
+  end
+
   private
 
   def show_params
