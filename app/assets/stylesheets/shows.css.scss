@@ -8,9 +8,15 @@
 }
 
 .show-card {
+  border-radius: 10px;
+  height: 100%;
   text-align: center;
+  display: block;
+  overflow: auto;
   margin: 5px 0;
-  padding: 10px 15px 10px 15px;
+  .info {
+  
+  }
   .band {
   }
 }

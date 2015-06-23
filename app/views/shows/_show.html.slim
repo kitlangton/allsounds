@@ -1,9 +1,9 @@
-.col-sm-12
+.col-xs-12.col-sm-6
   .show-card
-    .col-sm-6
+    .col-xs-6
       .pull-right
         = image_tag show.poster.url(:medium)
-    .col-sm-6.text-left
+    .col-xs-6.text-left
       h4.date
         = link_to show.starts_at.strftime("%b %e"), show_path(show)
         small
