@@ -1,4 +1,6 @@
 class ShowsController < ApplicationController
+  before_action :find_show, only: [:show, :edit, :destroy, :update]
+
   def index
     @shows = Show.all
   end
@@ -21,10 +23,30 @@ class ShowsController < ApplicationController
   end
 
   def show
-    @show = Show.find(params[:id])
+  end
+
+  def edit
+    @band_names = Band.pluck(:name)
+  end
+
+  def update
+    @update = ShowUpdater.new(show: @show.update(show_params), bands: params[:bands])
+    if @update.update
+      redirect_to shows_url
+    end
+  end
+
+  def destroy
+    if @show.destroy
+      redirect_to shows_url
+    end
   end
 
   private
+
+  def find_show
+    @show = Show.find(params[:id])
+  end
 
   def show_params
     params.require(:show).permit(:starts_at,:poster)

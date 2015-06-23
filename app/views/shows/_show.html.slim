@@ -9,5 +9,9 @@
         small
           |  
           = show.starts_at.strftime("at %l:%M %p")
+      - if current_user.try(:admin?)
+        .btn-group
+          = link_to "Edit", edit_show_path(show), class: "btn btn-xs btn-warning"
+          = link_to "Delete", show, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-xs btn-danger"
       - show.bands.each do |band|
         h5.band= band.name
