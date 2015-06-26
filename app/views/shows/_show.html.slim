@@ -1,9 +1,9 @@
-.col-xs-12.col-sm-6
-  .show-card
+.col-xs-12.col-sm-4
+  .show-card.fade-in
     .col-xs-6
       .pull-right
         = image_tag show.poster.url(:medium)
-    .col-xs-6.text-left
+    .col-xs-6.text-left.fade-in-text
       h4.date
         = link_to show.starts_at.strftime("%b %e"), show_path(show)
         small
